@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           right: "2rem",
           zIndex: 1000,
         }}>
-          <Image src="/whatsapp.svg" alt="whatsapp" width={60} height={60} />
+          <Image src="/whatsapp.svg" alt="whatsapp" width={50} height={50} />
         </Link>
         </ThemeProvider>
       </body>
