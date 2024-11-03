@@ -1,16 +1,12 @@
-import localFont from "next/font/local";
+import Link from "next/link";
 import "./globals.css";
+import Footer from "./template/Footer";
+import Header from "./template/Header";
+import Image from "next/image";
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import theme from './theme';
 
 export const metadata = {
   title: "Create Next App",
@@ -20,10 +16,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`min-h-screen flex flex-col `}>
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
+        <Header />
         {children}
+        <Footer />
+        <Link href={''} style={{
+          position: "fixed",
+          bottom: "2rem",
+          right: "2rem",
+          zIndex: 1000,
+        }}>
+          <Image src="/whatsapp.svg" alt="whatsapp" width={60} height={60} />
+        </Link>
+        </ThemeProvider>
       </body>
     </html>
   );
