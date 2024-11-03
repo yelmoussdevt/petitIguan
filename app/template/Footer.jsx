@@ -1,41 +1,44 @@
 "use client";
 import React from "react";
-import { Container, Grid, Typography,  Box } from "@mui/material";
-import { Facebook, Twitter, Instagram } from "@mui/icons-material";
+import { Container, Grid, Typography, Box, Divider, IconButton } from "@mui/material";
+import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer>
-      <Box sx={{ bgcolor: "rgba(0,0,0,0.7)" }} className="text-white py-5">
+      <Box sx={{ bgcolor: "#212121", color: "white", py: 5 }}>
         <Container>
           <Grid container spacing={4}>
+            {/* Section "About Us" */}
             <Grid item xs={12} md={4}>
               <Typography variant="h6" gutterBottom>
-                About Us
+                À Propos de Nous
               </Typography>
-              <Typography variant="body2">
-                Established in 2013 and renowned for offering the best service
-                possible, Surf Taghazout is a popular option for surfers from
-                all over the World. We provide both budget and luxury
-                accommodation. Our service remains stellar no matter your budget
-                though! Our aim is to give you the best holiday ever and we
-                guarantee the best value for money.
+              <Typography variant="body2" paragraph>
+                Établi en 2013, Surf Taghazout est une option populaire pour les
+                surfers du monde entier, offrant des hébergements allant de
+                l'économique au luxe. Notre objectif est de vous garantir des
+                vacances inoubliables et le meilleur rapport qualité-prix.
               </Typography>
+              <Link href="/about" color="inherit" underline="hover">
+                En savoir plus
+              </Link>
             </Grid>
+            {/* Section "Quick Links" */}
             <Grid item xs={12} md={4}>
               <Typography variant="h6" gutterBottom>
-                Quick Links
+                Liens Rapides
               </Typography>
-              <ul className="list-none p-0">
+              <ul style={{ listStyleType: "none", padding: 0 }}>
                 <li>
                   <Link href="/" color="inherit" underline="hover">
-                    Home
+                    Accueil
                   </Link>
                 </li>
                 <li>
                   <Link href="/about" color="inherit" underline="hover">
-                    About
+                    À Propos
                   </Link>
                 </li>
                 <li>
@@ -50,40 +53,120 @@ const Footer = () => {
                 </li>
               </ul>
             </Grid>
+            {/* Section "Follow Us" */}
             <Grid item xs={12} md={4}>
               <Typography variant="h6" gutterBottom>
-                Follow Us
+                Suivez-Nous
               </Typography>
-              <div className="flex space-x-4">
-                <Link
+              <Box display="flex" gap={2}>
+                <IconButton
+                  component="a"
                   href="https://facebook.com"
-                  color="inherit"
                   target="_blank"
                   rel="noopener"
+                  sx={{
+                    color: "white",
+                    "&:hover": { color: "#3b5998" },
+                  }}
                 >
                   <Facebook />
-                </Link>
-                <Link
+                </IconButton>
+                <IconButton
+                  component="a"
                   href="https://twitter.com"
-                  color="inherit"
                   target="_blank"
                   rel="noopener"
+                  sx={{
+                    color: "white",
+                    "&:hover": { color: "#1DA1F2" },
+                  }}
                 >
                   <Twitter />
-                </Link>
-                <Link
+                </IconButton>
+                <IconButton
+                  component="a"
                   href="https://instagram.com"
-                  color="inherit"
                   target="_blank"
                   rel="noopener"
+                  sx={{
+                    color: "white",
+                    "&:hover": { color: "#E1306C" },
+                  }}
                 >
                   <Instagram />
-                </Link>
-              </div>
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener"
+                  sx={{
+                    color: "white",
+                    "&:hover": { color: "#0077B5" },
+                  }}
+                >
+                  <LinkedIn />
+                </IconButton>
+              </Box>
             </Grid>
           </Grid>
-          <div className="text-center mt-8">
-            &copy; 2023 Company Name | All Rights Reserved
+
+          <Divider sx={{ my: 4, bgcolor: "#424242" }} />
+
+          {/* Section "Contact Information" */}
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6" gutterBottom>
+                Informations de Contact
+              </Typography>
+              <Typography variant="body2">
+                Adresse : Avenue des Alizés, Taghazout, Maroc
+              </Typography>
+              <Typography variant="body2">
+                Téléphone : +212 123 456 789
+              </Typography>
+              <Typography variant="body2">
+                Email : info@surftaghazout.com
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6" gutterBottom>
+                Newsletter
+              </Typography>
+              <Typography variant="body2" paragraph>
+                Abonnez-vous à notre newsletter pour recevoir les dernières
+                nouvelles et offres spéciales.
+              </Typography>
+              <Box component="form">
+                <input
+                  type="email"
+                  placeholder="Votre adresse email"
+                  style={{
+                    padding: "10px",
+                    width: "100%",
+                    borderRadius: "5px",
+                    border: "none",
+                    marginBottom: "10px",
+                  }}
+                />
+                <button
+                  type="submit"
+                  style={{
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    border: "none",
+                    backgroundColor: "#007B55",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  S'abonner
+                </button>
+              </Box>
+            </Grid>
+          </Grid>
+          <div className="text-center mt-4">
+            &copy; {new Date().getFullYear()} Nom de la Société | Tous Droits Réservés
           </div>
         </Container>
       </Box>

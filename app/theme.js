@@ -1,22 +1,28 @@
-"use client"
+"use client";
 import { createTheme } from '@mui/material/styles';
 
-// Créez un thème personnalisé
-// #004731 - Vert foncé
-// #007B55 - Vert
-// #A3D6B7 - Vert clair
-// #B2D9B2 - Vert plus clair
-// #52B68D - Vert turquoise
+// Créez un thème personnalisé avec les couleurs fournies
 const theme = createTheme({
   palette: {
     primary: {
       main: '#007B55', // Couleur principale
+      dark: '#004731', // Vert foncé
+      light: '#A3D6B7', // Vert clair
     },
     secondary: {
       main: '#B2D9B2', // Couleur secondaire
+      contrastText: '#004731', // Texte contrasté avec la couleur secondaire
     },
     background: {
       default: '#52B68D', // Couleur de fond par défaut
+      paper: '#A3D6B7', // Couleur de fond pour le papier (par ex. les cartes)
+    },
+    customColors: {
+      darkGreen: '#004731',   // Vert foncé
+      green: '#007B55',       // Vert
+      lightGreen: '#A3D6B7',  // Vert clair
+      lighterGreen: '#B2D9B2', // Vert plus clair
+      turquoise: '#52B68D',   // Vert turquoise
     },
   },
   typography: {
@@ -38,6 +44,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: '8px', // Bordure arrondie pour les boutons
+          color: '#004731',    // Texte en vert foncé par défaut
         },
       },
     },
