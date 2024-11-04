@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Testimonials({ testimonials }) {
   return (
-    <Container sx={{ py: 10, textAlign: "center" }}>
+    <Container sx={{ py: 15, textAlign: "center" }}>
       {/* Section Title */}
       <Typography variant="h4" sx={{ fontWeight: "bold", mb: 4 }}>
         Avis de nos Clients
