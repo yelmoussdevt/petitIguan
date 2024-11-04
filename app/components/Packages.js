@@ -20,7 +20,7 @@ export default function Packages({ packages }) {
           titleComponent={
             <>
               <h1 className="text-4xl font-semibold text-black dark:text-white">
-                Unleash the power of <br />
+                Unleash your power with <br />
                 <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
                   Our Packages
                 </span>
