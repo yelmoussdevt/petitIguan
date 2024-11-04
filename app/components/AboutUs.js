@@ -1,5 +1,12 @@
 // components/AboutUs.js
-import { Container, Paper, Typography, Box, Grid } from "@mui/material";
+import {
+  Container,
+  Paper,
+  Typography,
+  Box,
+  Grid,
+  useMediaQuery,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import Image from "next/image";
@@ -9,14 +16,106 @@ import {
   AiOutlineStar,
   AiOutlineEnvironment,
 } from "react-icons/ai"; // Importation d'icônes
+import "atropos/css";
+import Atropos from "atropos/react";
+import { useScroll, useTransform } from "framer-motion";
+import { useTheme } from "@emotion/react";
 
 export default function AboutUs() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const { scrollYProgress } = useScroll({
+    offset: ["start start", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
+  const scaleText = useTransform(scrollYProgress, [0, 1], [0, 15]);
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 90]);
   return (
     <Parallax speed={-10}>
       <Box
         sx={{ py: 20, backgroundColor: "background.default" }}
         className={styles.aboutContainer}
       >
+        <Box
+          sx={{
+            position: "relative", // Assurez-vous que le conteneur parent est positionné relativement
+            justifySelf: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          py={5}
+        >
+          <motion.div
+            className="box"
+            style={{
+              scale,
+              rotate,
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeInOut",
+            }}
+          >
+            <Atropos
+              style={{
+                borderRadius: 15,
+                padding: 40,
+                backgroundColor: "transparent",
+              }}
+              alwaysActive
+              activeOffset={40}
+              duration={100}
+              rotate={true}
+              rotateXMax={25}
+              rotateYMax={25}
+              shadow={false}
+              shadowOffset={30}
+              shadowScale={1.05}
+              highlight={true}
+            >
+              <Image
+                src={"/surfboard.webp"}
+                width={475}
+                height={475}
+                alt="credit card"
+              />
+            </Atropos>
+          </motion.div>
+          <motion.div
+            className="box"
+            style={{
+              scale: scaleText,
+              translateY: translateY,
+              position: "absolute",
+              top: "50%",
+              // left: "50%",
+              transform: "translate(-50%, -50%)", // Utilisez transform pour centrer le texte
+              zIndex: 1,
+              textAlign: "center",
+              padding: "0 20px",
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeInOut",
+            }}
+          >
+            <Typography
+              variant="h3"
+              style={{
+                whiteSpace: isMobile ? "normal" : "nowrap",
+              }}
+              fontSize={{ xs: 24, md: 52 }}
+              fontWeight={"bold"}
+            >
+              <span className={"myGradient"}>Un spot, une vague, un flow</span>
+            </Typography>
+          </motion.div>
+        </Box>
         <Container maxWidth="lg">
           <Paper
             component={motion.div}
@@ -127,10 +226,15 @@ export default function AboutUs() {
           </Paper>
 
           <Box sx={{ mt: 4, textAlign: "center" }}>
-            <Typography
-              variant="h5"
-              className={styles.subtitle}
-              sx={{ fontWeight: "bold", mb: 2, color: "primary.main" }}
+          <Typography
+              variant="h3"
+              className={styles.title}
+              sx={{
+                fontWeight: "bold",
+                mb: 4,
+                textAlign: "center",
+                color: "primary.dark",
+              }}
             >
               Rencontrez Notre Équipe
             </Typography>
@@ -139,8 +243,7 @@ export default function AboutUs() {
               votre aventure.
             </Typography>
 
-            <Box sx={{height : 300}} className="relative">
-            
+            <Box sx={{ height: 300 }} className="relative">
               <Image
                 src="/team.webp" // Assurez-vous d'avoir l'image dans le bon dossier
                 alt="Notre Équipe"
