@@ -91,7 +91,7 @@ const Header = () => {
 
           {/* Logo visible sur petits écrans */}
           <Box
-            sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1 }}
+            sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1 , p: 1}}
             component={Link}
             href="/"
           >

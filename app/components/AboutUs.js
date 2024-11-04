@@ -34,21 +34,22 @@ export default function AboutUs() {
 
   const translateY = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 90]);
+
   return (
     <Parallax speed={-10}>
       <Box
-        sx={{ py: 20, backgroundColor: "background.default" }}
+        sx={{ py: 20, backgroundColor: "background.default" }} // Utilisation de la couleur de fond par défaut
         className={styles.aboutContainer}
       >
         <Box
           sx={{
-            position: "relative", // Assurez-vous que le conteneur parent est positionné relativement
+            position: "relative",
             justifySelf: "center",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
-          py={5}
+          py={10}
         >
           <motion.div
             className="box"
@@ -80,7 +81,7 @@ export default function AboutUs() {
             >
               <Image
                 src={"/surfboard.webp"}
-                width={475}
+                width={600}
                 height={475}
                 alt="credit card"
               />
@@ -93,8 +94,7 @@ export default function AboutUs() {
               translateY: translateY,
               position: "absolute",
               top: "50%",
-              // left: "50%",
-              transform: "translate(-50%, -50%)", // Utilisez transform pour centrer le texte
+              transform: "translate(-50%, -50%)",
               zIndex: 1,
               textAlign: "center",
               padding: "0 20px",
@@ -111,6 +111,7 @@ export default function AboutUs() {
               }}
               fontSize={{ xs: 24, md: 52 }}
               fontWeight={"bold"}
+              // color={theme.palette.customColors.green} // Utilisation de la couleur personnalisée
             >
               <span className={"myGradient"}>Un spot, une vague, un flow</span>
             </Typography>
@@ -125,7 +126,7 @@ export default function AboutUs() {
             sx={{
               padding: 4,
               backgroundColor: "rgba(255,255,255,0.6)",
-              color: "primary.main",
+              color: theme.palette.primary.main, // Couleur principale
               borderRadius: 4,
               boxShadow: 4,
             }}
@@ -138,7 +139,7 @@ export default function AboutUs() {
                 fontWeight: "bold",
                 mb: 4,
                 textAlign: "center",
-                color: "primary.dark",
+                color: theme.palette.customColors.darkGreen, // Couleur personnalisée pour le titre
               }}
             >
               À Propos de Nous
@@ -166,7 +167,7 @@ export default function AboutUs() {
               variant="h5"
               className={styles.subtitle}
               textAlign={"center"}
-              sx={{ fontWeight: "bold", mb: 3, color: "primary.main" }}
+              sx={{ fontWeight: "bold", mb: 3, color: theme.palette.customColors.green }} // Couleur personnalisée
             >
               Nos Valeurs
             </Typography>
@@ -176,19 +177,19 @@ export default function AboutUs() {
                   title: "Passion",
                   description:
                     "Nous mettons notre passion pour le surf et le bien-être au cœur de chaque séjour. Nos instructeurs partagent leur amour pour les vagues et la méditation avec enthousiasme et expertise.",
-                  icon: <AiOutlineHeart size={40} color="#FF5722" />, // Icône de passion
+                  icon: <AiOutlineHeart size={40} color={theme.palette.customColors.turquoise} />, // Couleur personnalisée pour l'icône
                 },
                 {
                   title: "Excellence",
                   description:
                     "Nous aspirons à offrir une qualité de service irréprochable. Des cours de surf au confort de nos hébergements, nous nous assurons que chaque détail répond à vos attentes.",
-                  icon: <AiOutlineStar size={40} color="#FFEB3B" />, // Icône d'excellence
+                  icon: <AiOutlineStar size={40} color={theme.palette.customColors.lightGreen} />, // Couleur personnalisée pour l'icône
                 },
                 {
                   title: "Respect de la Nature",
                   description:
                     "Le respect de l'environnement est fondamental pour nous. Chaque activité est pensée pour minimiser notre impact sur la nature et préserver la beauté de Taghazout.",
-                  icon: <AiOutlineEnvironment size={40} color="#4CAF50" />, // Icône de respect de la nature
+                  icon: <AiOutlineEnvironment size={40} color={theme.palette.customColors.lighterGreen} />, // Couleur personnalisée pour l'icône
                 },
               ].map((value, index) => (
                 <Grid item xs={12} md={4} key={index}>
@@ -226,14 +227,14 @@ export default function AboutUs() {
           </Paper>
 
           <Box sx={{ mt: 4, textAlign: "center" }}>
-          <Typography
+            <Typography
               variant="h3"
               className={styles.title}
               sx={{
                 fontWeight: "bold",
                 mb: 4,
                 textAlign: "center",
-                color: "primary.dark",
+                color: theme.palette.customColors.turquoise, // Couleur personnalisée
               }}
             >
               Rencontrez Notre Équipe
@@ -245,11 +246,11 @@ export default function AboutUs() {
 
             <Box sx={{ height: 300 }} className="relative">
               <Image
-                src="/team.webp" // Assurez-vous d'avoir l'image dans le bon dossier
+                src="/team.webp"
                 alt="Notre Équipe"
-                layout="fill" // required
-                objectFit="cover" // change to suit your needs
-                className="rounded-full" // just an example
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
                 style={{
                   borderRadius: 10,
                   objectFit: "cover",
