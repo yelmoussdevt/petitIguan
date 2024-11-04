@@ -11,19 +11,27 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import InfoIcon from "@mui/icons-material/Info"; // About
+import LocalOfferIcon from "@mui/icons-material/LocalOffer"; // Packages
+import LocationOnIcon from "@mui/icons-material/LocationOn"; // Locations
+import TodayIcon from "@mui/icons-material/Today"; // Typical Day
+import ShareIcon from "@mui/icons-material/Share"; // Follow Us
+import MailIcon from "@mui/icons-material/Mail"; // Contact
+import BookIcon from "@mui/icons-material/Book"; // Book Now
+import HelpIcon from "@mui/icons-material/Help"; // FAQ
+import { useState } from "react";
 
 const pages = [
-  { title: "About", path: "/about" },
-  { title: "Packages", path: "/packages" },
-  { title: "Locations", path: "/locations" },
-  { title: "Typical Day", path: "/typical-day" },
-  { title: "Follow Us", path: "/follow-us" },
-  { title: "Contact", path: "/contact" },
-  { title: "Book Now", path: "/book" },
-  { title: "FAQ", path: "/faq" },
+  { title: "About", path: "/about", icon: <InfoIcon /> },
+  { title: "Packages", path: "/packages", icon: <LocalOfferIcon /> },
+  { title: "Locations", path: "/locations", icon: <LocationOnIcon /> },
+  { title: "Typical Day", path: "/typical-day", icon: <TodayIcon /> },
+  { title: "Follow Us", path: "/follow-us", icon: <ShareIcon /> },
+  { title: "Contact", path: "/contact", icon: <MailIcon /> },
+  { title: "Book Now", path: "/book", icon: <BookIcon /> },
+  { title: "FAQ", path: "/faq", icon: <HelpIcon /> },
 ];
 
 const Header = () => {
@@ -50,10 +58,10 @@ const Header = () => {
               alt="Logo"
               width={150}
               height={150}
-              style={{ height: "90px", width: "auto", p:1 }} // Ajustement de la taille
+              style={{ height: "90px", width: "auto" }}
             />
           </Box>
-          
+
           {/* Menu mobile */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -70,10 +78,11 @@ const Header = () => {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
             >
-              {pages.map(({ title, path }) => (
+              {pages.map(({ title, path, icon }) => (
                 <MenuItem key={title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" component={Link} href={path} sx={{ color: "black" }}>
-                    {title}
+                  <Typography textAlign="center" component={Link} href={path} sx={{ color: "black", display: 'flex', alignItems: 'center' }}>
+                    {icon}
+                    <span style={{ marginLeft: '8px' }}>{title}</span>
                   </Typography>
                 </MenuItem>
               ))}
@@ -97,7 +106,7 @@ const Header = () => {
 
           {/* Liens de navigation pour grands écrans */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map(({ title, path }) => (
+            {pages.map(({ title, path, icon }) => (
               <Button
                 key={title}
                 onClick={handleCloseNavMenu}
@@ -109,11 +118,14 @@ const Header = () => {
                     bgcolor: 'primary.main',
                     color: 'white',
                   },
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
                 component={Link}
                 href={path}
               >
-                {title}
+                {icon}
+                <span style={{ marginLeft: '8px' }}>{title}</span>
               </Button>
             ))}
           </Box>

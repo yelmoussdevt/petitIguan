@@ -4,12 +4,19 @@ import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import Image from "next/image";
 import styles from "./AboutUs.module.css";
-import { AiOutlineHeart, AiOutlineStar, AiOutlineEnvironment } from 'react-icons/ai'; // Importation d'icônes
+import {
+  AiOutlineHeart,
+  AiOutlineStar,
+  AiOutlineEnvironment,
+} from "react-icons/ai"; // Importation d'icônes
 
 export default function AboutUs() {
   return (
     <Parallax speed={-10}>
-      <Box sx={{ py: 20, backgroundColor: 'background.default' }} className={styles.aboutContainer}>
+      <Box
+        sx={{ py: 20, backgroundColor: "background.default" }}
+        className={styles.aboutContainer}
+      >
         <Container maxWidth="lg">
           <Paper
             component={motion.div}
@@ -41,7 +48,12 @@ export default function AboutUs() {
             {/* Mission Statement */}
             <Typography
               variant="body1"
-              sx={{ mb: 4, lineHeight: 1.8, textAlign: "justify", fontSize: '1.1rem' }}
+              sx={{
+                mb: 4,
+                lineHeight: 1.8,
+                textAlign: "justify",
+                fontSize: "1.1rem",
+              }}
             >
               Depuis 2013, Surf Taghazout sʼengage à offrir des expériences
               immersives inoubliables dans le domaine du surf et du yoga. Situé
@@ -60,7 +72,7 @@ export default function AboutUs() {
               Nos Valeurs
             </Typography>
             <Grid container spacing={4}>
-              {[ 
+              {[
                 {
                   title: "Passion",
                   description:
@@ -96,9 +108,7 @@ export default function AboutUs() {
                       height: "100%",
                     }}
                   >
-                    <Box sx={{ mb: 2 }}>
-                      {value.icon}
-                    </Box>
+                    <Box sx={{ mb: 2 }}>{value.icon}</Box>
                     <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
                       {value.title}
                     </Typography>
@@ -114,33 +124,37 @@ export default function AboutUs() {
             </Grid>
 
             {/* Team Section */}
-      
           </Paper>
 
           <Box sx={{ mt: 4, textAlign: "center" }}>
-              <Typography
-                variant="h5"
-                className={styles.subtitle}
-                sx={{ fontWeight: "bold", mb: 2, color: "primary.main" }}
-              >
-                Rencontrez Notre Équipe
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2 }}>
-                Une équipe dédiée et passionnée prête à vous accompagner dans
-                votre aventure.
-              </Typography>
+            <Typography
+              variant="h5"
+              className={styles.subtitle}
+              sx={{ fontWeight: "bold", mb: 2, color: "primary.main" }}
+            >
+              Rencontrez Notre Équipe
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 2 }}>
+              Une équipe dédiée et passionnée prête à vous accompagner dans
+              votre aventure.
+            </Typography>
+
+            <Box sx={{height : 300}} className="relative">
+            
               <Image
                 src="/team.webp" // Assurez-vous d'avoir l'image dans le bon dossier
                 alt="Notre Équipe"
-                width={400}
-                height={300}
+                layout="fill" // required
+                objectFit="cover" // change to suit your needs
+                className="rounded-full" // just an example
                 style={{
-                  borderRadius: "8px",
+                  borderRadius: 10,
                   objectFit: "cover",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
                 }}
               />
             </Box>
+          </Box>
         </Container>
       </Box>
     </Parallax>
