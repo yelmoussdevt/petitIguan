@@ -18,7 +18,7 @@ export default function AboutUs() {
             transition={{ duration: 0.8 }}
             sx={{
               padding: 4,
-              backgroundColor: "rgba(255,255,255,0.9)",
+              backgroundColor: "rgba(255,255,255,0.6)",
               color: "primary.main",
               borderRadius: 4,
               boxShadow: 4,
