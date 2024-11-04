@@ -42,7 +42,7 @@ const Header = () => {
         <Toolbar disableGutters>
           {/* Logo visible sur grands écrans */}
           <Box
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1, p: 1 }}
             component={Link}
             href="/"
           >
@@ -51,7 +51,7 @@ const Header = () => {
               alt="Logo"
               width={150}
               height={150}
-              style={{ height: "40px", width: "auto" }} // Ajustement de la taille
+              style={{ height: "90px", width: "auto", p:1 }} // Ajustement de la taille
             />
           </Box>
           
@@ -92,7 +92,7 @@ const Header = () => {
               alt="Logo"
               width={150}
               height={150}
-              style={{ height: "40px", width: "auto" }}
+              style={{ height: "80px", width: "auto" }}
             />
           </Box>
 

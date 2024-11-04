@@ -114,7 +114,10 @@ export default function AboutUs() {
             </Grid>
 
             {/* Team Section */}
-            <Box sx={{ mt: 4, textAlign: "center" }}>
+      
+          </Paper>
+
+          <Box sx={{ mt: 4, textAlign: "center" }}>
               <Typography
                 variant="h5"
                 className={styles.subtitle}
@@ -138,7 +141,6 @@ export default function AboutUs() {
                 }}
               />
             </Box>
-          </Paper>
         </Container>
       </Box>
     </Parallax>
