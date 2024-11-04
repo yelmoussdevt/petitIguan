@@ -41,7 +41,7 @@ export default function HeroSection({ carouselItems }) {
               textShadow: "2px 2px 8px rgba(0,0,0,0.6)",
               fontFamily: dancingScript.style.fontFamily, // Appliquer la police Dancing Script
             }}
-            className="text-8xl"
+            className="text-6xl"
           >
             {item.title}
           </Typography>
