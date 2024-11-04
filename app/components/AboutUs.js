@@ -167,7 +167,8 @@ export default function AboutUs() {
               variant="h5"
               className={styles.subtitle}
               textAlign={"center"}
-              sx={{ fontWeight: "bold", mb: 3, color: theme.palette.customColors.green }} // Couleur personnalisée
+              sx={{ fontWeight: "bold", mt: 3, color: theme.palette.customColors.green }} // Couleur personnalisée
+            
             >
               Nos Valeurs
             </Typography>
@@ -183,16 +184,17 @@ export default function AboutUs() {
                   title: "Excellence",
                   description:
                     "Nous aspirons à offrir une qualité de service irréprochable. Des cours de surf au confort de nos hébergements, nous nous assurons que chaque détail répond à vos attentes.",
-                  icon: <AiOutlineStar size={40} color={theme.palette.customColors.lightGreen} />, // Couleur personnalisée pour l'icône
+                  icon: <AiOutlineStar size={40} color={theme.palette.customColors.turquoise} />, // Couleur personnalisée pour l'icône
                 },
                 {
                   title: "Respect de la Nature",
                   description:
                     "Le respect de l'environnement est fondamental pour nous. Chaque activité est pensée pour minimiser notre impact sur la nature et préserver la beauté de Taghazout.",
-                  icon: <AiOutlineEnvironment size={40} color={theme.palette.customColors.lighterGreen} />, // Couleur personnalisée pour l'icône
+                  icon: <AiOutlineEnvironment size={40} color={theme.palette.customColors.turquoise} />, // Couleur personnalisée pour l'icône
                 },
               ].map((value, index) => (
                 <Grid item xs={12} md={4} key={index}>
+                   <Box sx={{ mb: 2 }}>{value.icon}</Box>
                   <Box
                     sx={{
                       textAlign: "center",
@@ -206,9 +208,13 @@ export default function AboutUs() {
                       },
                       bgcolor: "background.paper",
                       height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+
                     }}
                   >
-                    <Box sx={{ mb: 2 }}>{value.icon}</Box>
+                   
                     <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
                       {value.title}
                     </Typography>
@@ -232,14 +238,15 @@ export default function AboutUs() {
               className={styles.title}
               sx={{
                 fontWeight: "bold",
-                mb: 4,
+                mt: 8,
                 textAlign: "center",
                 color: theme.palette.customColors.turquoise, // Couleur personnalisée
               }}
+              gutterBottom
             >
               Rencontrez Notre Équipe
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2 }} gutterBottom>
               Une équipe dédiée et passionnée prête à vous accompagner dans
               votre aventure.
             </Typography>
@@ -252,7 +259,7 @@ export default function AboutUs() {
                 objectFit="cover"
                 className="rounded-full"
                 style={{
-                  borderRadius: 10,
+                  borderRadius:20,
                   objectFit: "cover",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
                 }}

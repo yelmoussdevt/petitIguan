@@ -34,8 +34,8 @@ export default function RootLayout({ children }) {
         <Footer />
         <Link href={''} style={{
           position: "fixed",
-          bottom: "2rem",
-          right: "2rem",
+          bottom: "1rem",
+          right: "1rem",
           zIndex: 1000,
         }}>
           <Image src="/whatsapp.svg" alt="whatsapp" width={50} height={50} />

@@ -13,7 +13,7 @@ const dancingScript = Dancing_Script({
 
 export default function HeroSection({ carouselItems }) {
   return (
-    <Carousel indicators={false} navButtonsAlwaysVisible animation="slide" interval={10000}>
+    <Carousel indicators={false} navButtonsAlwaysVisible animation="fade" interval={10000} >
       {carouselItems.map((item, index) => (
         <Box
           key={index}
