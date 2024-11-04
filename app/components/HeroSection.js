@@ -56,7 +56,7 @@ export default function HeroSection({ carouselItems }) {
             {item.subtitle}
           </Typography>
           <Button variant="contained" color="secondary" sx={{ mt: 4, fontWeight: "bold" }}>
-            Explorez l'Expérience
+            Explorez lʼExpérience
           </Button>
         </Box>
       ))}

@@ -43,7 +43,7 @@ export default function AboutUs() {
               variant="body1"
               sx={{ mb: 4, lineHeight: 1.8, textAlign: "justify", fontSize: '1.1rem' }}
             >
-              Depuis 2013, Surf Taghazout s'engage à offrir des expériences
+              Depuis 2013, Surf Taghazout sʼengage à offrir des expériences
               immersives inoubliables dans le domaine du surf et du yoga. Situé
               dans le cadre pittoresque de Taghazout, au Maroc, notre mission
               est de permettre à chacun de se connecter avec la nature, de se

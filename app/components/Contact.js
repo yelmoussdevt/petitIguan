@@ -15,7 +15,7 @@ export default function Contact() {
       
       {/* Inspirational Quote */}
       <Typography variant="body1" sx={{ mb: 4, fontStyle: "italic", color: "#555" }}>
-        "Le seul moyen de faire du bon travail est d’aimer ce que vous faites." – Steve Jobs
+      &quot;Le seul moyen de faire du bon travail est d’aimer ce que vous faites.&quot;– Steve Jobs
       </Typography>
       
    

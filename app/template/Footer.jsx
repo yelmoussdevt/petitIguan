@@ -18,7 +18,7 @@ const Footer = () => {
               <Typography variant="body2" paragraph>
                 Établi en 2013, Surf Taghazout est une option populaire pour les
                 surfers du monde entier, offrant des hébergements allant de
-                l'économique au luxe. Notre objectif est de vous garantir des
+                lʼéconomique au luxe. Notre objectif est de vous garantir des
                 vacances inoubliables et le meilleur rapport qualité-prix.
               </Typography>
               <Link href="/about" color="inherit" underline="hover">
@@ -160,7 +160,7 @@ const Footer = () => {
                     cursor: "pointer",
                   }}
                 >
-                  S'abonner
+                  Sʼabonner
                 </button>
               </Box>
             </Grid>
