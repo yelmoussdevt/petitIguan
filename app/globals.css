@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/Header.module.css */
+.header {
+    backdrop-filter: blur(10px); /* Ajoute un effet de flou en arrière-plan */
+  }
+  
+  .button:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+    transition: transform 0.3s; /* Transition douce */
+  }

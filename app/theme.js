@@ -26,7 +26,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, Arial, sans-serif', // Police par défaut
+    fontFamily: 'Poppins, Arial, sans-serif', // Police par défaut
     h1: {
       fontSize: '2.5rem',
       fontWeight: 700,
@@ -37,6 +37,11 @@ const theme = createTheme({
     },
     body1: {
       fontSize: '1rem',
+      lineHeight: 1.5, // Amélioration de la lisibilité
+    },
+    button: {
+      textTransform: 'none', // Enlever la majuscule par défaut des boutons
+      fontWeight: 600,       // Poids du texte
     },
   },
   components: {
@@ -45,6 +50,10 @@ const theme = createTheme({
         root: {
           borderRadius: '8px', // Bordure arrondie pour les boutons
           color: '#004731',    // Texte en vert foncé par défaut
+         
+          '&:hover': {
+            backgroundColor: '#007B55', // Couleur de fond au survol
+          },
         },
       },
     },

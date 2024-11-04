@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import Image from "next/image";
 import styles from "./AboutUs.module.css";
+import { AiOutlineHeart, AiOutlineStar, AiOutlineEnvironment } from 'react-icons/ai'; // Importation d'icônes
 
 export default function AboutUs() {
   return (
@@ -40,7 +41,7 @@ export default function AboutUs() {
             {/* Mission Statement */}
             <Typography
               variant="body1"
-              sx={{ mb: 4, lineHeight: 1.8, textAlign: "justify" }}
+              sx={{ mb: 4, lineHeight: 1.8, textAlign: "justify", fontSize: '1.1rem' }}
             >
               Depuis 2013, Surf Taghazout s'engage à offrir des expériences
               immersives inoubliables dans le domaine du surf et du yoga. Situé
@@ -59,21 +60,24 @@ export default function AboutUs() {
               Nos Valeurs
             </Typography>
             <Grid container spacing={4}>
-              {[
+              {[ 
                 {
                   title: "Passion",
                   description:
                     "Nous mettons notre passion pour le surf et le bien-être au cœur de chaque séjour. Nos instructeurs partagent leur amour pour les vagues et la méditation avec enthousiasme et expertise.",
+                  icon: <AiOutlineHeart size={40} color="#FF5722" />, // Icône de passion
                 },
                 {
                   title: "Excellence",
                   description:
                     "Nous aspirons à offrir une qualité de service irréprochable. Des cours de surf au confort de nos hébergements, nous nous assurons que chaque détail répond à vos attentes.",
+                  icon: <AiOutlineStar size={40} color="#FFEB3B" />, // Icône d'excellence
                 },
                 {
                   title: "Respect de la Nature",
                   description:
                     "Le respect de l'environnement est fondamental pour nous. Chaque activité est pensée pour minimiser notre impact sur la nature et préserver la beauté de Taghazout.",
+                  icon: <AiOutlineEnvironment size={40} color="#4CAF50" />, // Icône de respect de la nature
                 },
               ].map((value, index) => (
                 <Grid item xs={12} md={4} key={index}>
@@ -92,6 +96,9 @@ export default function AboutUs() {
                       height: "100%",
                     }}
                   >
+                    <Box sx={{ mb: 2 }}>
+                      {value.icon}
+                    </Box>
                     <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
                       {value.title}
                     </Typography>

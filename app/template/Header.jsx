@@ -17,104 +17,115 @@ import Image from "next/image";
 import Link from "next/link";
 
 const pages = [
-  "About",
-  "packages",
-  "locations",
-  "Typical day with us",
-  "Follow us",
-  "Contact us",
-  "Book now",
-  "FAQ",
+  { title: "About", path: "/about" },
+  { title: "Packages", path: "/packages" },
+  { title: "Locations", path: "/locations" },
+  { title: "Typical Day", path: "/typical-day" },
+  { title: "Follow Us", path: "/follow-us" },
+  { title: "Contact", path: "/contact" },
+  { title: "Book Now", path: "/book" },
+  { title: "FAQ", path: "/faq" },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.7)" }}>
+    <AppBar position="fixed" sx={{ bgcolor: "rgba(0, 0, 0, 0.8)", boxShadow: "none" }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>        
-          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} component={Link} href={'/'}>
+        <Toolbar disableGutters>
+          {/* Logo visible sur grands écrans */}
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            component={Link}
+            href="/"
+          >
             <Image
               src="/logotransparent.png"
-              alt="avatar"
+              alt="Logo"
               width={150}
               height={150}
+              style={{ height: "40px", width: "auto" }} // Ajustement de la taille
             />
           </Box>
+          
+          {/* Menu mobile */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+              aria-label="menu"
               onClick={handleOpenNavMenu}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+              {pages.map(({ title, path }) => (
+                <MenuItem key={title} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" component={Link} href={path} sx={{ color: "black" }}>
+                    {title}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
+
+          {/* Logo visible sur petits écrans */}
+          <Box
+            sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1 }}
+            component={Link}
+            href="/"
           >
-            LOGO
-          </Typography>
+            <Image
+              src="/logotransparent.png"
+              alt="Logo"
+              width={150}
+              height={150}
+              style={{ height: "40px", width: "auto" }}
+            />
+          </Box>
+
+          {/* Liens de navigation pour grands écrans */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map(({ title, path }) => (
               <Button
-                key={page}
+                key={title}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  '&:hover': {
+                    bgcolor: 'primary.main',
+                    color: 'white',
+                  },
+                }}
+                component={Link}
+                href={path}
               >
-                {page}
+                {title}
               </Button>
             ))}
+          </Box>
+
+          {/* Section utilisateur ou avatar (optionnel) */}
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton sx={{ p: 0 }}>
+                <Avatar alt="User Avatar" src="/avatar.jpg" /> {/* Ajoutez votre image d'avatar */}
+              </IconButton>
+            </Tooltip>
           </Box>
         </Toolbar>
       </Container>

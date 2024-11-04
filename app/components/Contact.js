@@ -18,9 +18,7 @@ export default function Contact() {
         "Le seul moyen de faire du bon travail est d’aimer ce que vous faites." – Steve Jobs
       </Typography>
       
-      <Grid container spacing={4} justifyContent="center">
-        {/* Contact Form */}
-        <Grid item xs={12} md={6}>
+   
           <Box
             component={motion.div}
             initial={{ opacity: 0, y: 50 }}
@@ -87,69 +85,9 @@ export default function Contact() {
               Envoyer
             </Button>
           </Box>
-        </Grid>
+      
 
-        {/* Social Media Links */}
-        <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
-          <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
-            Suivez-nous
-          </Typography>
-          <Box display="flex" justifyContent="center" gap={3}>
-            <IconButton
-              component="a"
-              href="https://facebook.com"
-              target="_blank"
-              sx={{
-                color: "#3b5998",
-                "&:hover": { color: "#365492", transform: "scale(1.1)", transition: "0.2s" },
-                fontSize: 40,
-                animation: 'pulse 1.5s infinite',
-              }}
-            >
-              <FaFacebook />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://instagram.com"
-              target="_blank"
-              sx={{
-                color: "#E1306C",
-                "&:hover": { color: "#C13584", transform: "scale(1.1)", transition: "0.2s" },
-                fontSize: 40,
-                animation: 'pulse 1.5s infinite',
-              }}
-            >
-              <FaInstagram />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://twitter.com"
-              target="_blank"
-              sx={{
-                color: "#1DA1F2",
-                "&:hover": { color: "#1A91DA", transform: "scale(1.1)", transition: "0.2s" },
-                fontSize: 40,
-                animation: 'pulse 1.5s infinite',
-              }}
-            >
-              <FaTwitter />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://linkedin.com"
-              target="_blank"
-              sx={{
-                color: "#0077B5",
-                "&:hover": { color: "#005582", transform: "scale(1.1)", transition: "0.2s" },
-                fontSize: 40,
-                animation: 'pulse 1.5s infinite',
-              }}
-            >
-              <FaLinkedin />
-            </IconButton>
-          </Box>
-        </Grid>
-      </Grid>
+       
     </Container>
   );
 }
