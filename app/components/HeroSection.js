@@ -13,7 +13,7 @@ const dancingScript = Dancing_Script({
 
 export default function HeroSection({ carouselItems }) {
   return (
-    <Carousel indicators={false} navButtonsAlwaysVisible animation="fade" interval={10000} >
+    <Carousel indicators={false}  animation="fade" interval={10000} >
       {carouselItems.map((item, index) => (
         <Box
           key={index}
@@ -46,6 +46,7 @@ export default function HeroSection({ carouselItems }) {
             {item.title}
           </Typography>
           <Typography
+          gutterBottom
             variant="h5"
             component={motion.h2}
             initial={{ opacity: 0, y: -20 }}
@@ -55,9 +56,18 @@ export default function HeroSection({ carouselItems }) {
           >
             {item.subtitle}
           </Typography>
-          <Button variant="contained" color="secondary" sx={{ mt: 4, fontWeight: "bold" }}>
+          {/* <Button variant="contained" color="secondary" sx={{ mt: 4, fontWeight: "bold" }}>
             Explorez lʼExpérience
-          </Button>
+          </Button> */}
+
+          <button className="button mt-10">
+  <span className="text">   Explorez lʼExpérience</span>
+  <span className="blob"></span>
+  <span className="blob"></span>
+  <span className="blob"></span>
+  <span className="blob"></span>
+</button>
+
         </Box>
       ))}
     </Carousel>
