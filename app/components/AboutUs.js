@@ -269,7 +269,7 @@ export default function AboutUs() {
               votre aventure.
             </Typography>
 
-            <Box sx={{ height: 300 }} className="relative">
+            <Box sx={{ height: 220 }} className="relative">
               <Image
                 src="/team.webp"
                 alt="Notre Équipe"
