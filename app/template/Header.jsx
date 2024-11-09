@@ -44,7 +44,10 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: "rgba(0, 0, 0, 0.8)", boxShadow: "none" }}>
+    <AppBar
+      position="fixed"
+      sx={{ bgcolor: "rgba(255, 255, 255, 0.8)", boxShadow: "none" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo visible sur grands écrans */}
@@ -54,11 +57,11 @@ const Header = () => {
             href="/"
           >
             <Image
-              src="/logotransparent.png"
+              src="/logoIguan.png"
               alt="Logo"
-              width={150}
-              height={150}
-              style={{ height: "90px", width: "auto" }}
+              width={50}
+              height={50}
+              style={{ height: "60px", width: "auto" }}
             />
           </Box>
 
@@ -68,7 +71,7 @@ const Header = () => {
               size="large"
               aria-label="menu"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="primary.main"
             >
               <MenuIcon />
             </IconButton>
@@ -80,9 +83,18 @@ const Header = () => {
             >
               {pages.map(({ title, path, icon }) => (
                 <MenuItem key={title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" component={Link} href={path} sx={{ color: "black", display: 'flex', alignItems: 'center' }}>
+                  <Typography
+                    textAlign="center"
+                    component={Link}
+                    href={path}
+                    sx={{
+                      color: "black",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
                     {icon}
-                    <span style={{ marginLeft: '8px' }}>{title}</span>
+                    <span style={{ marginLeft: "8px" }}>{title}</span>
                   </Typography>
                 </MenuItem>
               ))}
@@ -91,12 +103,12 @@ const Header = () => {
 
           {/* Logo visible sur petits écrans */}
           <Box
-            sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1 , p: 1}}
+            sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1, p: 1 }}
             component={Link}
             href="/"
           >
             <Image
-              src="/logotransparent.png"
+              src="/logoIguan.png"
               alt="Logo"
               width={150}
               height={150}
@@ -112,20 +124,20 @@ const Header = () => {
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: "white",
+                  color: "primary.main",
                   display: "block",
-                  '&:hover': {
-                    bgcolor: 'primary.main',
-                    color: 'white',
+                  "&:hover": {
+                    bgcolor: "primary.main",
+                    color: "white",
                   },
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: "flex",
+                  alignItems: "center",
                 }}
                 component={Link}
                 href={path}
+                startIcon={icon}
               >
-                {icon}
-                <span style={{ marginLeft: '8px' }}>{title}</span>
+                {title}
               </Button>
             ))}
           </Box>
@@ -134,7 +146,8 @@ const Header = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton sx={{ p: 0 }}>
-                <Avatar alt="User Avatar" src="/avatar.jpg" /> {/* Ajoutez votre image d'avatar */}
+                <Avatar alt="User Avatar" src="/avatar.jpg" />{" "}
+                {/* Ajoutez votre image d'avatar */}
               </IconButton>
             </Tooltip>
           </Box>

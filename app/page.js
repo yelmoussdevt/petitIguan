@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import HeroSection from "./components/HeroSection";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./components/AboutUs/AboutUs";
 import Testimonials from "./components/Testimonials";
 import Packages from "./components/Packages";
 import Contact from "./components/Contact";
@@ -11,7 +11,7 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   const [carouselItems] = useState([
-    { image: "/surf.jpg", title: "Vagues parfaites, esprit tranquille", subtitle: "Une aventure surf & yoga inoubliable" },
+    // { image: "/surf.jpg", title: "Vagues parfaites, esprit tranquille", subtitle: "Une aventure surf & yoga inoubliable" },
     { image: "/yoga.jpg", title: "Équilibre et Sérénité", subtitle: "Connectez-vous à votre moi intérieur" },
     { image: "/surfer.jpg", title: "Soleil, mer et bien-être", subtitle: "Vivez la paix et la liberté" },
   ]);
@@ -28,9 +28,10 @@ export default function Home() {
     <main>
       <ParallaxProvider>
         <HeroSection carouselItems={carouselItems} />
-        <AboutUs />
-        <Testimonials testimonials={testimonials} />
+        <AboutUs />        
+        
         <Packages packages={packages} />
+        <Testimonials testimonials={testimonials} />
         <Contact />
       </ParallaxProvider>
     </main>
