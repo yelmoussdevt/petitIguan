@@ -1,4 +1,6 @@
 "use client";
+import { useTheme } from "@emotion/react";
+import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
 import { ParallaxProvider } from "react-scroll-parallax";
 
@@ -10,14 +12,35 @@ const Contact = dynamic(() => import("./components/Contact"));
 const Locations = dynamic(() => import("./components/Locations"));
 
 export default function Home() {
+  const theme = useTheme();
   const videoSrc = "/V.mp4"; // Chemin de la vidéo
-  const title = ["Perfect waves, peaceful mind", "Balance and Serenity", "Sun, sea, and well-being"]; // Titre à afficher
-  const subtitle = ["An unforgettable surf & yoga adventure", "Connect with your inner self", "Experience peace and freedom"]; // Sous-titre à afficher
+  const title = [
+    "Perfect waves, peaceful mind",
+    "Balance and Serenity",
+    "Sun, sea, and well-being",
+  ]; // Titre à afficher
+  const subtitle = [
+    "An unforgettable surf & yoga adventure",
+    "Connect with your inner self",
+    "Experience peace and freedom",
+  ]; // Sous-titre à afficher
 
   const testimonials = [
-    { quote: "Un séjour exceptionnel qui a changé ma vie. Les cours de yoga et de surf sont parfaits !", name: "Marie Dupont" },
-    { quote: "Le cadre est magnifique, l’équipe très accueillante. Un voyage à refaire sans hésiter !", name: "Ahmed Benyahia" },
-    { quote: "Un lieu unique où l’on peut vraiment se ressourcer. Merci pour cette belle expérience !", name: "Sophie Martin" },
+    {
+      quote:
+        "Un séjour exceptionnel qui a changé ma vie. Les cours de yoga et de surf sont parfaits !",
+      name: "Marie Dupont",
+    },
+    {
+      quote:
+        "Le cadre est magnifique, l’équipe très accueillante. Un voyage à refaire sans hésiter !",
+      name: "Ahmed Benyahia",
+    },
+    {
+      quote:
+        "Un lieu unique où l’on peut vraiment se ressourcer. Merci pour cette belle expérience !",
+      name: "Sophie Martin",
+    },
   ];
 
   const packages = ["Surf", "Yoga", "Surf & Yoga"];
@@ -28,9 +51,11 @@ export default function Home() {
         <HeroSection videoSrc={videoSrc} title={title} subtitle={subtitle} />
         <AboutUs />
         <Packages packages={packages} />
-        <Locations />
-        <Testimonials testimonials={testimonials} />
-        <Contact />
+        <Box sx={{ bgcolor: theme.palette.customColors.lightGreen }}>
+          <Locations />
+          <Testimonials testimonials={testimonials} />
+          <Contact />
+        </Box>
       </ParallaxProvider>
     </main>
   );

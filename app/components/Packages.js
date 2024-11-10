@@ -13,6 +13,7 @@ import { ContainerScroll } from "./ui/container-scroll-animation";
 import Image from "next/image";
 import Wave from "react-wavify";
 import { useTheme } from "@emotion/react";
+import zIndex from "@mui/material/styles/zIndex";
 
 export default function Packages({ packages }) {
   const theme = useTheme();
@@ -22,7 +23,8 @@ export default function Packages({ packages }) {
     fill={theme.palette.customColors.turquoise}
  
     style={{
-      backgroundColor : theme.palette.customColors.lightGreen
+      backgroundColor : theme.palette.customColors.lightGreen,
+      zIndex: 1,
     }}
     paused={false}
     options={{

@@ -24,62 +24,54 @@ export default function AboutUsHeader() {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
   return (
-    <Parallax speed={-10}>
-       <Wave
-        fill={theme.palette.customColors.turquoise}
-        paused={false}
-        style={{ display: "flex" }}
-        className="mt-auto"
-        options={{
-          height: 20,
-          amplitude: 20,
-          speed: 0.15,
-          points: 6,
-        }}
-      />
-      <Box
-        sx={{
-          py: 5,
-          backgroundColor: "background.default",
-        }}
-        className={styles.aboutContainer}
-      >
+    <>
      
+
+      <Parallax speed={-10}>
         <Box
           sx={{
-            position: "relative",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            py: 3,
+            py: 5,
+            // backgroundColor: "background.default",
           }}
+          className={styles.aboutContainer}
         >
-          <motion.div
-            className="box"
-            style={{
-              scale: scaleText,
-              translateY: translateY,
-              position: "absolute",
-              top: 0,
-              transform: "translate(-50%, -50%)",
-              zIndex: 1,
-              textAlign: "center",
-              padding: "0 20px",
+          <Box
+            sx={{
+              position: "relative",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              py: 5,
+              backgroundColor: theme.palette.customColors.green,
             }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
           >
-            <Typography
-              variant="h3"
-              style={{ whiteSpace: isMobile ? "normal" : "nowrap" }}
-              fontSize={{ xs: 24, md: 52 }}
-              fontWeight={"bold"}
-              className="TitleHero"
+            <motion.div
+              className="box"
+              style={{
+                scale: scaleText,
+                translateY: translateY,
+                position: "absolute",
+                top: 0,
+                transform: "translate(-50%, -50%)",
+                zIndex: 1,
+                textAlign: "center",
+                padding: "0 20px",
+                
+              }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
             >
-              One spot, one wave, one flow
-            </Typography>
-          </motion.div>
-          <motion.div
+              <Typography
+                variant="h3"
+                style={{ whiteSpace: isMobile ? "normal" : "nowrap" }}
+                fontSize={{ xs: 24, md: 52 }}
+                fontWeight={"bold"}
+                className="TitleHero"
+              >
+                One spot, one wave, one flow
+              </Typography>
+            </motion.div>
+            {/* <motion.div
             style={{ scale, rotate }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
@@ -106,11 +98,10 @@ export default function AboutUsHeader() {
                 className={styles.image}
               />
             </Atropos>
-          </motion.div>
+          </motion.div> */}
+          </Box>
         </Box>
-      
-      </Box>
-     
-    </Parallax>
+      </Parallax>
+    </>
   );
 }
