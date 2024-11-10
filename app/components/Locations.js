@@ -42,7 +42,7 @@ const Locations = () => {
         <Box
           sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
         >
-          <Grid container spacing={2}>
+          <Grid container spacing={5}>
             {locationsData.map((location, index) => (
               <Grid
                 size={{ xs: 12, md: 6 }}
