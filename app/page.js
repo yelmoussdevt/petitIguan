@@ -8,13 +8,11 @@ import Testimonials from "./components/Testimonials";
 import Packages from "./components/Packages";
 import Contact from "./components/Contact";
 
-
 export default function Home() {
-  const [carouselItems] = useState([
-    { image: "/surf.jpg", title: "Perfect waves, peaceful mind", subtitle: "An unforgettable surf & yoga adventure" },
-    { image: "/yoga.jpg", title: "Balance and Serenity", subtitle: "Connect with your inner self" },
-    { image: "/surfer.jpg", title: "Sun, sea, and well-being", subtitle: "Experience peace and freedom" },
-  ]);
+  const videoSrc = "/V(1).mp4"; // Chemin de la vidéo
+  const title = ["Perfect waves, peaceful mind",  "Balance and Serenity",  "Sun, sea, and well-being"]; // Titre à afficher
+  const subtitle = ["An unforgettable surf & yoga adventure", "Connect with your inner self", "Experience peace and freedom"]; // Sous-titre à afficher
+
   const testimonials = [
     { quote: "Un séjour exceptionnel qui a changé ma vie. Les cours de yoga et de surf sont parfaits !", name: "Marie Dupont" },
     { quote: "Le cadre est magnifique, l’équipe très accueillante. Un voyage à refaire sans hésiter !", name: "Ahmed Benyahia" },
@@ -26,9 +24,8 @@ export default function Home() {
   return (
     <main>
       <ParallaxProvider>
-        <HeroSection carouselItems={carouselItems} />
+        <HeroSection videoSrc={videoSrc} title={title} subtitle={subtitle} />
         <AboutUs />        
-        
         <Packages packages={packages} />
         <Testimonials testimonials={testimonials} />
         <Contact />

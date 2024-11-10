@@ -48,7 +48,7 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '8px', // Bordure arrondie pour les boutons
+          // borderRadius: '8px', // Bordure arrondie pour les boutons
           color: '#004731',    // Texte en vert foncé par défaut
          
           '&:hover': {

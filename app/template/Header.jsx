@@ -46,7 +46,7 @@ const Header = () => {
   return (
     <AppBar
       position="fixed"
-      sx={{ bgcolor: "rgba(255, 255, 255, 0.6)", boxShadow: "none" }}
+      sx={{ bgcolor: "rgba(0, 0, 0, 0.6)", boxShadow: "none" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -124,10 +124,10 @@ const Header = () => {
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: "primary.main",
+                  color: "secondary.main",
                   display: "block",
                   "&:hover": {
-                    bgcolor: "primary.main",
+                    bgcolor: "secondary.main",
                     color: "white",
                   },
                   display: "flex",
