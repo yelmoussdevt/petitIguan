@@ -25,6 +25,18 @@ export default function AboutUsHeader() {
 
   return (
     <Parallax speed={-10}>
+       <Wave
+        fill={theme.palette.customColors.turquoise}
+        paused={false}
+        style={{ display: "flex" }}
+        className="mt-auto"
+        options={{
+          height: 20,
+          amplitude: 20,
+          speed: 0.15,
+          points: 6,
+        }}
+      />
       <Box
         sx={{
           py: 5,

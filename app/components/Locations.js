@@ -2,6 +2,7 @@ import { Typography, Box, Container } from "@mui/material";
 import Image from "next/image";
 import Grid from "@mui/material/Grid2";
 import { CardBody, CardContainer, CardItem } from "@/app/components/ui/3d-card";
+import { SurferMap } from "./ui/SurferMap";
 
 const locationsData = [
   {
@@ -26,29 +27,29 @@ const locationsData = [
 const Locations = () => {
   return (
     <Box sx={{ py: 10 }}>
-      <Container>
-        <Typography variant="h6" gutterBottom>
-          Our Locations
-        </Typography>
+      <Container className="text-center">
+        <h2 className="text-4xl font-semibold text-black dark:text-white ">
+          Our <br />
+          <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none TitleHero">
+            Locations
+          </span>
+        </h2>
         <Typography variant="body1">
           Located 19 km north of Agadir...
         </Typography>
         <Typography variant="h6" gutterBottom>
           Taghazout: The Location
         </Typography>
-        <Typography variant="body1" paragraph>
-          Located 19 km north of Agadir...
-        </Typography>
+        
+        <SurferMap />
+      
         <Box
           sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
         >
           <Grid container spacing={5}>
             {locationsData.map((location, index) => (
-              <Grid
-                size={{ xs: 12, md: 6 }}
-                key={index}
-              >
-                <CardContainer >
+              <Grid size={{ xs: 12, md: 6 }} key={index}>
+                <CardContainer>
                   <CardBody className="relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
                     <CardItem
                       translateZ="50"

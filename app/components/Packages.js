@@ -11,20 +11,38 @@ import {
 import { motion } from "framer-motion";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 import Image from "next/image";
+import Wave from "react-wavify";
+import { useTheme } from "@emotion/react";
 
 export default function Packages({ packages }) {
+  const theme = useTheme();
   return (
+    <>
+    <Wave
+    fill={theme.palette.customColors.turquoise}
+ 
+    style={{
+      backgroundColor : theme.palette.customColors.lightGreen
+    }}
+    paused={false}
+    options={{
+      height: 20,
+      amplitude: 20,
+      speed: 0.15,
+      points: 6,
+    }}
+  />
     <Box>
       <div className="flex flex-col overflow-hidden">
         <ContainerScroll
           titleComponent={
             <>
-              <h1 className="text-4xl font-semibold text-black dark:text-white">
+              <h2 className="text-4xl font-semibold text-black dark:text-white ">
                 Unleash your power with <br />
-                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none TitleHero">
                   Our Packages
                 </span>
-              </h1>
+              </h2>
             </>
           }
         >
@@ -58,5 +76,6 @@ export default function Packages({ packages }) {
         </ContainerScroll>
       </div>
      </Box>
+     </>
   );
 }

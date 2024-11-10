@@ -18,7 +18,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
     <Box
       sx={{
         position: "relative",
-        minHeight: "80vh",
+        minHeight: "90vh",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -31,7 +31,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
     >
       <video
         autoPlay
-        playsinline 
+        playsInline 
         loop
         muted
         style={{
@@ -47,9 +47,9 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <Container className="mt-auto">
+      <Container>
         <Typography
-          className="TitleHero md:text-7xl sm:text-4xl font-bold"
+          className="TitleHero md:text-7xl sm:text-5xl font-bold"
           variant="h1"
           color="secondary.main"
         >
@@ -84,18 +84,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
           />
         </Typography>
       </Container>
-      <Wave
-        fill={theme.palette.customColors.turquoise}
-        paused={false}
-        style={{ display: "flex" }}
-        className="mt-auto"
-        options={{
-          height: 20,
-          amplitude: 20,
-          speed: 0.15,
-          points: 6,
-        }}
-      />
+     
     </Box>
   );
 }
