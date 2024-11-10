@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
-import Image from "next/image";
-import Atropos from "atropos/react";
 import { useScroll, useTransform } from "framer-motion";
 import { useTheme } from "@emotion/react";
 import styles from "./AboutUs.module.css";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import { AboutUsMission } from "./AboutUsMissionCard";
-import Wave from "react-wavify";
 
 export default function AboutUsHeader() {
   const theme = useTheme();
@@ -25,8 +21,6 @@ export default function AboutUsHeader() {
 
   return (
     <>
-     
-
       <Parallax speed={-10}>
         <Box
           sx={{
@@ -57,7 +51,6 @@ export default function AboutUsHeader() {
                 zIndex: 1,
                 textAlign: "center",
                 padding: "0 20px",
-                
               }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
