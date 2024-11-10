@@ -2,18 +2,19 @@
 import { Box, Button, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import { motion } from "framer-motion";
-import { Dancing_Script } from 'next/font/google'; // Importer la police depuis Next.js
+import { Dancing_Script } from "next/font/google"; // Importer la police depuis Next.js
+import { ReactTyped } from "react-typed";
 
 // Charger la police Dancing Script
 const dancingScript = Dancing_Script({
-  weight: ['400', '700'], // Choisissez les poids que vous souhaitez utiliser
-  subsets: ['latin'], // Sous-ensembles de caractères
-  display: 'swap', // Pour une meilleure performance
+  weight: ["400", "700"], // Choisissez les poids que vous souhaitez utiliser
+  subsets: ["latin"], // Sous-ensembles de caractères
+  display: "swap", // Pour une meilleure performance
 });
 
 export default function HeroSection({ carouselItems }) {
   return (
-    <Carousel indicators={false}  animation="fade" interval={10000} >
+    <Carousel indicators={false} animation="fade" interval={10000}>
       {carouselItems.map((item, index) => (
         <Box
           key={index}
@@ -25,11 +26,17 @@ export default function HeroSection({ carouselItems }) {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
+            alignItems: "start",
+            textAlign: "start",
             color: "white",
           }}
         >
+          <header>
+            <h1>
+              Summer <span>at the</span> Beach
+            </h1>
+          </header>
+
           <Typography
             variant="h2"
             component={motion.h1}
@@ -45,14 +52,19 @@ export default function HeroSection({ carouselItems }) {
           >
             {item.title}
           </Typography>
+
           <Typography
-          gutterBottom
+            gutterBottom
             variant="h5"
             component={motion.h2}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            sx={{ mt: 2, textShadow: "1px 1px 6px rgba(0,0,0,0.6)", fontFamily: 'Roboto, sans-serif' }} // Garder Roboto pour le sous-titre
+            sx={{
+              mt: 2,
+              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
+              fontFamily: "Roboto, sans-serif",
+            }} // Garder Roboto pour le sous-titre
           >
             {item.subtitle}
           </Typography>
@@ -60,14 +72,13 @@ export default function HeroSection({ carouselItems }) {
             Explorez lʼExpérience
           </Button> */}
 
-          <button className="button mt-10">
-  <span className="text">   Explorez lʼExpérience</span>
-  <span className="blob"></span>
-  <span className="blob"></span>
-  <span className="blob"></span>
-  <span className="blob"></span>
-</button>
-
+          {/* <button className="button mt-10">
+            <span className="text"> Explorez lʼExpérience</span>
+            <span className="blob"></span>
+            <span className="blob"></span>
+            <span className="blob"></span>
+            <span className="blob"></span>
+          </button> */}
         </Box>
       ))}
     </Carousel>

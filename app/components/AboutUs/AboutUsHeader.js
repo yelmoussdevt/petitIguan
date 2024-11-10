@@ -39,7 +39,7 @@ export default function AboutUsHeader() {
           </motion.div>
           <motion.div style={{ scale, rotate }} transition={{ duration: 1.5, ease: "easeInOut" }}>
             <Atropos style={{ borderRadius: 15, padding: 40, backgroundColor: "transparent" }} alwaysActive activeOffset={40} duration={100} rotate rotateXMax={25} rotateYMax={25} shadow={false} highlight>
-              <Image src="/surfboard.webp" alt="Company Image" width={300} height={300} className={styles.image} />
+              <Image src="/surfboard.webp" alt="Company Image" width={350} height={350} className={styles.image} />
             </Atropos>
           </motion.div>
         </Box>

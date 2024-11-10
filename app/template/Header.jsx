@@ -46,7 +46,7 @@ const Header = () => {
   return (
     <AppBar
       position="fixed"
-      sx={{ bgcolor: "rgba(255, 255, 255, 0.8)", boxShadow: "none" }}
+      sx={{ bgcolor: "rgba(255, 255, 255, 0.6)", boxShadow: "none" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>

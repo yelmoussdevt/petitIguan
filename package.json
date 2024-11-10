@@ -24,6 +24,7 @@
     "react-material-ui-carousel": "^3.4.2",
     "react-phone-input-2": "^2.15.1",
     "react-scroll-parallax": "^3.4.5",
+    "react-typed": "^2.0.12",
     "styled-components": "^6.1.13",
     "tailwind-merge": "^2.5.4"
   },

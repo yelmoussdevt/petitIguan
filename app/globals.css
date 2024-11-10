@@ -1,12 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* styles/Header.module.css */
-.header {
-    backdrop-filter: blur(10px); /* Ajoute un effet de flou en arrière-plan */
+
+
+  
+  header h1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+    /* margin-inline-start: -2rem; */
+    font-size: clamp(1.5rem, 10vw, 6rem);
+    font-family: "Caveat", cursive;
+    line-height: 1;
+    font-weight: bold;
+    /* rotate: -3deg; */
+    /* background: linear-gradient(176deg, #4f67e3 0%, #ca4fc2 45%, #edba5d); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
   }
   
+  h1 span {
+    font-size: 0.6em;
+  }
+
   .button:hover {
     transform: scale(1.05); /* Effet de zoom au survol */
     transition: transform 0.3s; /* Transition douce */
