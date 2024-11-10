@@ -31,6 +31,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
     >
       <video
         autoPlay
+        playsinline 
         loop
         muted
         style={{
