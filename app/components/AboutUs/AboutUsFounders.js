@@ -11,13 +11,12 @@ import {
   Divider,
 } from "@mui/material";
 
-
-const ClampText = styled('div')({
-  display: '-webkit-box',
-  WebkitBoxOrient: 'vertical',
-  overflow: 'hidden',
+const ClampText = styled("div")({
+  display: "-webkit-box",
+  WebkitBoxOrient: "vertical",
+  overflow: "hidden",
   WebkitLineClamp: 4, // Limite le texte à 6 lignes
-  textOverflow: 'ellipsis',
+  textOverflow: "ellipsis",
 });
 
 export function AboutUsFounders() {
@@ -45,7 +44,7 @@ export function AboutUsFounders() {
   return (
     <Box sx={{ py: 20 }}>
       <Container>
-      <Typography
+        <Typography
           variant="h4"
           component="h2"
           textAlign="start"
@@ -63,8 +62,8 @@ export function AboutUsFounders() {
           className="text-3xl"
           gutterBottom
         >
-          We specialise in Surf & Yoga experiences <br /> for groups of minimum 10
-          people and up
+          We specialise in Surf & Yoga experiences <br /> for groups of minimum
+          10 people and up
         </Typography>
 
         <Typography
@@ -77,20 +76,31 @@ export function AboutUsFounders() {
           idea of getting together and working on a project by the beach doing
           what we love most, host & share our Moroccan culture
         </Typography>
+        <Divider sx={{ width: "100%", mt: 2, mb: 2 }} />
+
         <Typography
           variant="h4"
           component="h2"
-          textAlign="center"
-          color="primary.main"
-          gutterBottom
+          textAlign="start"
+          color="customColors.darkGreen"
+          className="py-5 "
         >
+          <span className="text-4xl md:text-[4rem] font-semibold mt-1 leading-none  ">
           Meet Our Founders
+          </span>
         </Typography>
+
         <Grid container spacing={4}>
           {founders.map((founder, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
+              <Card
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                }}
+              >
+                <Box sx={{ display: "flex", justifyContent: "center", pt: 2 }}>
                   <Avatar
                     alt={founder.name}
                     src={founder.image}

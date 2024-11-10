@@ -28,7 +28,7 @@ const Locations = () => {
   return (
     <Box sx={{ py: 10 }}>
       <Container className="text-center">
-        <h2 className="text-4xl font-semibold text-black dark:text-white ">
+        <h2 className="text-4xl font-semibold text-white ">
           Our <br />
           <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none TitleHero">
             Locations
