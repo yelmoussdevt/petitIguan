@@ -57,7 +57,7 @@ const Header = () => {
             href="/"
           >
             <Image
-              src="/logoHeader.png"
+              src="/blanc.png"
               alt="Logo"
               width={180}
               height={180}
@@ -145,7 +145,7 @@ const Header = () => {
             sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
           >
               <Image
-              src="/logoHeader.png"
+              src="/blanc.png"
               alt="Logo"
               width={180}
               height={180}
