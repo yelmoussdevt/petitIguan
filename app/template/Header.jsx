@@ -30,7 +30,7 @@ const pages = [
   { title: "Typical Day", path: "/typical-day", icon: <TodayIcon /> },
   { title: "Follow Us", path: "/follow-us", icon: <ShareIcon /> },
   { title: "Contact", path: "/contact", icon: <MailIcon /> },
-  { title: "Book Now", path: "/book", icon: <BookIcon /> },
+  // { title: "Book Now", path: "/book", icon: <BookIcon /> },
   { title: "FAQ", path: "/faq", icon: <HelpIcon /> },
 ];
 
@@ -145,10 +145,11 @@ const Header = () => {
           {/* Section utilisateur ou avatar (optionnel) */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton sx={{ p: 0 }}>
-                <Avatar alt="User Avatar" src="/avatar.jpg" />{" "}
-                {/* Ajoutez votre image d'avatar */}
-              </IconButton>
+              
+                <Button variant="contained" color="secondary">
+                  Book now
+                </Button>
+              
             </Tooltip>
           </Box>
         </Toolbar>

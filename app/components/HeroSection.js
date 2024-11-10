@@ -16,7 +16,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
     <Box
       sx={{
         position: "relative",
-        minHeight: "100vh",
+        minHeight: "80vh",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -60,7 +60,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
             mt: "2",
             textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
           }}
-          className="TitleHero text-4xl"
+          className=" text-4xl"
         >
           <ReactTyped strings={subtitle} typeSpeed={80} backSpeed={80} loop  showCursor={false}/>
         </Typography>
