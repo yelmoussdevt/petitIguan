@@ -1,4 +1,4 @@
-// components/Testimonials.js
+"use client"
 import { Container, Paper, Typography, Avatar, Box, Grid } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import { motion } from "framer-motion";

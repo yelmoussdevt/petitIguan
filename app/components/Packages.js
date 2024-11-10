@@ -1,4 +1,4 @@
-// components/Packages.js
+"use client"
 import {
   Container,
   Typography,

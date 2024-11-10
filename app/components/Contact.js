@@ -1,4 +1,4 @@
-// components/Contact.js
+"use client"
 import { Container, Typography, Grid, TextField, Button, Box, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";

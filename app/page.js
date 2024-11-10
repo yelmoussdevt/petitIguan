@@ -1,16 +1,16 @@
-// pages/Home.js
 "use client";
-import { useState } from "react";
+import dynamic from "next/dynamic";
 import { ParallaxProvider } from "react-scroll-parallax";
-import HeroSection from "./components/HeroSection";
-import AboutUs from "./components/AboutUs/AboutUs";
-import Testimonials from "./components/Testimonials";
-import Packages from "./components/Packages";
-import Contact from "./components/Contact";
+
+const HeroSection = dynamic(() => import("./components/HeroSection"));
+const AboutUs = dynamic(() => import("./components/AboutUs/AboutUs"));
+const Testimonials = dynamic(() => import("./components/Testimonials"));
+const Packages = dynamic(() => import("./components/Packages"));
+const Contact = dynamic(() => import("./components/Contact"));
 
 export default function Home() {
   const videoSrc = "/V.mp4"; // Chemin de la vidéo
-  const title = ["Perfect waves, peaceful mind",  "Balance and Serenity",  "Sun, sea, and well-being"]; // Titre à afficher
+  const title = ["Perfect waves, peaceful mind", "Balance and Serenity", "Sun, sea, and well-being"]; // Titre à afficher
   const subtitle = ["An unforgettable surf & yoga adventure", "Connect with your inner self", "Experience peace and freedom"]; // Sous-titre à afficher
 
   const testimonials = [
@@ -25,7 +25,7 @@ export default function Home() {
     <main>
       <ParallaxProvider>
         <HeroSection videoSrc={videoSrc} title={title} subtitle={subtitle} />
-        <AboutUs />        
+        <AboutUs />
         <Packages packages={packages} />
         <Testimonials testimonials={testimonials} />
         <Contact />

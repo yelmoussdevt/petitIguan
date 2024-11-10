@@ -7,6 +7,7 @@ import { useTheme } from "@emotion/react";
 import styles from "./AboutUs.module.css";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { AboutUsMission } from "./AboutUsMissionCard";
+import Wave from "react-wavify";
 
 export default function AboutUsHeader() {
   const theme = useTheme();
@@ -95,9 +96,9 @@ export default function AboutUsHeader() {
             </Atropos>
           </motion.div>
         </Box>
-
-        {/* <AboutUsMission /> */}
+      
       </Box>
+     
     </Parallax>
   );
 }

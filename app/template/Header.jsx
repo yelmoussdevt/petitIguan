@@ -102,19 +102,6 @@ const Header = () => {
           </Box>
 
           {/* Logo visible sur petits écrans */}
-          <Box
-            sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1, p: 1 }}
-            component={Link}
-            href="/"
-          >
-            <Image
-              src="/logoIguan.png"
-              alt="Logo"
-              width={150}
-              height={150}
-              style={{ height: "80px", width: "auto" }}
-            />
-          </Box>
 
           {/* Liens de navigation pour grands écrans */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -143,14 +130,21 @@ const Header = () => {
           </Box>
 
           {/* Section utilisateur ou avatar (optionnel) */}
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: { xs: 5, md: 0 } }}>
             <Tooltip title="Open settings">
-              
-                <Button variant="contained" color="secondary">
-                  Book now
-                </Button>
-              
+              <Button variant="contained" color="secondary">
+                Book now
+              </Button>
             </Tooltip>
+          </Box>
+
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} />
+
+          {/* Logo */}
+          <Box
+            sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
+          >
+            <Typography>Petit Iguan</Typography>
           </Box>
         </Toolbar>
       </Container>
