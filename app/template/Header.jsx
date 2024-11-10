@@ -57,11 +57,11 @@ const Header = () => {
             href="/"
           >
             <Image
-              src="/logoIguan.png"
+              src="/logoHeader.png"
               alt="Logo"
-              width={50}
-              height={50}
-              style={{ height: "60px", width: "auto" }}
+              width={180}
+              height={180}
+         
             />
           </Box>
 
@@ -144,7 +144,13 @@ const Header = () => {
           <Box
             sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
           >
-            <Typography>Petit Iguan</Typography>
+              <Image
+              src="/logoHeader.png"
+              alt="Logo"
+              width={180}
+              height={180}
+         
+            />
           </Box>
         </Toolbar>
       </Container>
