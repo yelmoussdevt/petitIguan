@@ -16,7 +16,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
     <Box
       sx={{
         position: "relative",
-        minHeight: "80vh",
+        minHeight: "100vh",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",

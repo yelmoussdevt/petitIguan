@@ -9,7 +9,7 @@ import Packages from "./components/Packages";
 import Contact from "./components/Contact";
 
 export default function Home() {
-  const videoSrc = "/V(1).mp4"; // Chemin de la vidéo
+  const videoSrc = "/V.mp4"; // Chemin de la vidéo
   const title = ["Perfect waves, peaceful mind",  "Balance and Serenity",  "Sun, sea, and well-being"]; // Titre à afficher
   const subtitle = ["An unforgettable surf & yoga adventure", "Connect with your inner self", "Experience peace and freedom"]; // Sous-titre à afficher
 
