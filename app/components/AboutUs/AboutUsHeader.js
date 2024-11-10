@@ -49,7 +49,7 @@ export default function AboutUsHeader() {
               scale: scaleText,
               translateY: translateY,
               position: "absolute",
-              top: "50%",
+              top: 0,
               transform: "translate(-50%, -50%)",
               zIndex: 1,
               textAlign: "center",
