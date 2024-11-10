@@ -17,7 +17,7 @@ export default function AboutUsHeader() {
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
-  const scaleText = useTransform(scrollYProgress, [0, 1], [0, 15]);
+  const scaleText = useTransform(scrollYProgress, [0, 1], [0, 12]);
 
   const translateY = useTransform(scrollYProgress, [0, 1], [10, -100]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 60]);
@@ -31,9 +31,7 @@ export default function AboutUsHeader() {
         }}
         className={styles.aboutContainer}
       >
-         <Typography variant="h4" component="h2" textAlign="center" color="primary.main" className="TitleHero text-6xl" gutterBottom>
-        About Us
-      </Typography>
+     
         <Box
           sx={{
             position: "relative",
@@ -90,8 +88,8 @@ export default function AboutUsHeader() {
               <Image
                 src="/logoIguan.png"
                 alt="Company Image"
-                width={350}
-                height={350}
+                width={250}
+                height={250}
                 className={styles.image}
               />
             </Atropos>

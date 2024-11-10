@@ -45,8 +45,8 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
         Your browser does not support the video tag.
       </video>
       <Container>
-        <Typography className="TitleHero text-6xl font-bold" variant="h1">
-          <ReactTyped strings={title} typeSpeed={70} backSpeed={70} loop />
+        <Typography className="TitleHero text-8xl font-bold" variant="h1" color="secondary.main">
+          <ReactTyped strings={title} typeSpeed={70} backSpeed={70} loop   showCursor={false}/>
         </Typography>
         <Divider sx={{ width: "100%", mt: 2, mb: 2 }} />
         <Typography
