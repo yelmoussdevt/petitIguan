@@ -7,6 +7,7 @@ const AboutUs = dynamic(() => import("./components/AboutUs/AboutUs"));
 const Testimonials = dynamic(() => import("./components/Testimonials"));
 const Packages = dynamic(() => import("./components/Packages"));
 const Contact = dynamic(() => import("./components/Contact"));
+const Locations = dynamic(() => import("./components/Locations"));
 
 export default function Home() {
   const videoSrc = "/V.mp4"; // Chemin de la vidéo
@@ -27,6 +28,7 @@ export default function Home() {
         <HeroSection videoSrc={videoSrc} title={title} subtitle={subtitle} />
         <AboutUs />
         <Packages packages={packages} />
+        <Locations />
         <Testimonials testimonials={testimonials} />
         <Contact />
       </ParallaxProvider>
