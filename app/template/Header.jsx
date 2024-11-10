@@ -71,7 +71,7 @@ const Header = () => {
               size="large"
               aria-label="menu"
               onClick={handleOpenNavMenu}
-              color="primary.main"
+              color="inherit"
             >
               <MenuIcon />
             </IconButton>

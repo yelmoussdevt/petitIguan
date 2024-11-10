@@ -16,7 +16,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
     <Box
       sx={{
         position: "relative",
-        minHeight: "70vh",
+        minHeight: "100vh",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -46,7 +46,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
       </video>
       <Container>
         <Typography className="TitleHero text-6xl font-bold" variant="h1">
-          <ReactTyped strings={title} typeSpeed={55} backSpeed={65} loop />
+          <ReactTyped strings={title} typeSpeed={70} backSpeed={70} loop />
         </Typography>
         <Divider sx={{ width: "100%", mt: 2, mb: 2 }} />
         <Typography
@@ -62,7 +62,7 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
           }}
           className="TitleHero text-4xl"
         >
-          <ReactTyped strings={subtitle} typeSpeed={50} backSpeed={60} loop />
+          <ReactTyped strings={subtitle} typeSpeed={80} backSpeed={80} loop  showCursor={false}/>
         </Typography>
       </Container>
     </Box>
